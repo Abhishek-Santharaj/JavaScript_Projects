@@ -1,0 +1,48 @@
+<html>
+ <head>
+     <link rel="stylesheet" href="DateStyling.css">
+ </head>
+<body>
+    
+<div>
+    <h2>JavaScript Date</h2>
+    <p id="p1"> </p>
+
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+</div>
+    <script>
+        function changeColor()
+        {
+        date = new Date();
+        hour = date.getHours();
+        minute = date.getMinutes();
+        seconds = date.getSeconds();
+        timing = date.toLocaleTimeString();
+
+        x = document.getElementById("p1");
+        x.innerHTML = timing;
+
+        if(seconds%2==0)
+        {
+            x.style.color="yellow";
+        }
+        else{
+            x.style.color="white";
+        }
+    }
+    function start()
+    {
+    clear = setInterval(changeColor,1000);
+    }  
+    
+    function stop()
+    {
+        clearInterval(clear);
+    }
+   
+    </script>
+
+
+</body>
+</html>
