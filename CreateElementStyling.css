@@ -1,0 +1,10 @@
+*{box-sizing: border-box;}
+div{width: 30%;height:200px;border: 1px solid blue; background-color: rgb(93, 137, 233);margin-left: 325px;}
+input{width: 30%;height: 40px;color: crimson;font-size: 24px; background-color: black;text-align: center;margin-left:325px;}
+h2{color: green;padding: auto;text-align: center;}
+p{color:white;font-size: 18px;text-align: center; }
+button{width: 30%;height: 40px;font-size: 18px;
+background-color: blue; color: white;margin-left: 325px;}
+
+
+
