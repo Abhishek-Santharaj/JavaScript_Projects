@@ -1,0 +1,59 @@
+<html>
+    <title>Image Slider</title>
+    <head>
+        <style>
+            h2{color: white;background-color: #047A00;width: 470px;height: 50px;margin-left: 10px;font-size: 32px;border-radius: 8px;text-align: center;padding-top: 12px;}
+            body{background-color:cornsilk;}
+            button{background-color: black;border-radius: 15px;margin-left: 150px;}
+            span{color: white;font-weight: bold;font-size: 34px;background-color: black;}
+        </style>
+    </head>
+    <body>
+        <h2>JavaScript Image Slider</h2>
+        <img src="n.jpg" id="m1" width="500" height="400">
+        <br><br>
+        <button onclick="forward()"><span> > </span></button>
+        <button onclick="backward()"><span> < </span></button>
+
+        <script>
+            x=["sasuke.jpg","kakashi.png","kushina.png","minato.png"];
+            slide=document.getElementById("m1");
+            count=-1;
+            
+            //console.log(x.length);
+
+            function forward()
+            {
+                count=count+1;
+
+                if(count<=x.length)
+                {   
+                    if(count==x.length)
+                    {
+                    count=0;
+                    }
+                    slide.src=x[count];
+                }
+                console.log(x.length);
+
+            }
+
+            function backward()
+            {
+                count=count-1;
+                if(count<x.length)
+                {   
+                    if(count==-2 || count==-1)
+                    {
+                        index=x.length-1;
+                        count=index;
+                    }
+                    slide.src=x[count];
+                }
+               
+            }
+
+        </script>
+
+    </body>
+</html>
