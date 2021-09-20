@@ -1,0 +1,46 @@
+<html>
+    <title>Image Slider</title>
+    <head>
+        <style>
+            h2{color: white;background-color: #047A00;width: 470px;height: 50px;margin-left: 10px;font-size: 32px;border-radius: 8px;text-align: center;padding-top: 12px;}
+            body{background-color:cornsilk;}
+            button{background-color: black;border-radius: 15px;margin-left: 150px;}
+            span{color: white;font-weight: bold;font-size: 34px;background-color: black;}
+        </style>
+    </head>
+    <body>
+        <h2>Automatic Image Slider</h2>
+        <img src="n.jpg" id="m1" width="500" height="400">
+        <br><br>
+       
+
+        <script>
+            x=["sasuke.jpg","kakashi.png","kushina.png","minato.png","n.jpg"];
+            slide=document.getElementById("m1");
+            count=-1;
+            
+            //console.log(x.length);
+
+            function forward()
+            {
+                count=count+1;
+
+                if(count<=x.length)
+                {   
+                    if(count==x.length)
+                    {
+                    count=0;
+                    }
+                    slide.src=x[count];
+                }
+                console.log(count);
+
+            }
+            setInterval(forward,3000);
+
+            
+
+        </script>
+
+    </body>
+</html>
