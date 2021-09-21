@@ -1,0 +1,32 @@
+<html>
+    <style>
+        h2{color: blue;font-size: 35px;}
+        input{width: 40%;height: 40px;}
+        button{width: 40%;height: 40px;background-color: blue;color: white;}
+        body{background-color: whitesmoke;}
+    </style>
+    <body id="b1">
+        <h2 id="h2">Refresh, Auto Refresh and Redirect the web page</h2>
+
+        <input id="i1" placeholder="ASSIGN TIME TO REFRESH THE WEB PAGE"><br><br>
+        <button onclick="Refresh()">click</button>
+
+        <script>
+            function Refresh()
+            {
+            //time=document.getElementById("i1").value;
+            //time=parseInt(time);
+
+            time=3;
+            setTimeout("location.reload(true)",time*1000);
+            console.log(window.location.href);
+            if(setTimeout("location.reload(true)",time*1000))//loaction.assign('URL') to redirect
+            {
+              document.getElementById("h2").style.color="red";      
+            }
+            }
+
+            setInterval(Refresh,3000);
+        </script>
+    </body>
+</html>
