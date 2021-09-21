@@ -1,0 +1,39 @@
+<html>
+    <title>Alert Prompt</title>
+    <style>
+        h2{color: white;background-color: #047A00;width: 470px;height: 50px;margin-left: 10px;font-size: 32px;border-radius: 8px;text-align: center;padding-top: 12px;}
+        body{background-color:cornsilk;}
+        button{height: 40px;width: 20%;font-size: 22px; background-color:blue;border-radius: 15px;margin-left: 150px;}
+        p{width: 40%;height: 40px;color: red;font-size: 25px;}
+    </style>
+    <body id="b1">
+        <h2 id="h2">Alert, Confirm, Prompt box</h2>
+        <p id="p1"> </p>
+        <button onclick="check()">click</button>
+
+        <script>
+            function check()
+            {
+           // alert(" Don't leave this page.");  ---alert
+          
+          /* if(confirm("Sure to proceed")) //true
+           {
+            document.getElementById("p1").innerHTML="Thank you!!";
+           }
+           else //false
+           {
+            document.getElementById("p1").innerHTML="Oops! Sorry";
+
+           } */ 
+
+           password=prompt("Please enter password", "");
+           if(password==1234)
+           {
+            document.getElementById("p1").innerHTML="Correct Password!!";
+           }else{
+            document.getElementById("p1").innerHTML="Wrong Password";
+           }
+            }
+        </script>
+    </body>
+</html>
