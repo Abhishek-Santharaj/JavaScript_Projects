@@ -1,0 +1,62 @@
+<html>
+    <style>
+        body{background-color:lightblue;}
+        input{background-color: gainsboro;color: blue;width: 100%;height: 35px;font-size: 32px;}
+        p{padding: 6px;color: red;font-size: 22px;}
+        h1{color: crimson; text-align: center;}
+        table{border: 0px solid blue; border-collapse: collapse;}
+        td{border: 0px solid blue; width: 250; height: 70; text-align: center; font-size: 30px;background-color:#cbb9b1;font-size: 30px;color: blue;text-align: left;padding: 10px;}
+        span{color: red;}
+    </style>
+
+    <body>
+        <h1>JavaScript Form Validation</h1>
+<form action="AutomaticImageSlider.html" onsubmit="return check()" autocomplete="off">
+        <table align="center">
+            <tr>
+            <td> Name:<span>**</span></td>
+            <td><input id="name"/></td>
+            
+        </tr>
+        <tr>
+            <td> Father:</td>
+            <td><input/></td>
+            
+        </tr>
+        <tr>
+            <td> Mother:</td>
+            <td><input/></td>
+            
+        </tr>
+        <tr>
+            <td> Mobile:<span>**</span></td>
+            <td><input id="mobile"/></td>
+           
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Signup" /></td>
+        </tr>
+    </table>
+</form>
+    <script>
+         //alert("hi");
+        function check()
+        {   
+            name = document.getElementById("name").value;
+            mobile = document.getElementById("mobile").value;
+            if(name=="")
+            {
+                alert("Please fill the name");
+                return false;
+            }else if(mobile=="")
+            {
+                alert("Please fill the mobile");
+                return false;
+            }
+            
+            
+          
+        }
+    </script>
+     </body>
+    </html>
