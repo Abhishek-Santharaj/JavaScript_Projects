@@ -1,0 +1,133 @@
+<html>
+    <style>
+        body{background-color:lightblue;}
+        input{background-color: gainsboro;color: blue;width: 100%;height: 35px;font-size: 32px;}
+        p{padding: 6px;color: red;font-size: 22px;}
+        h1{color: crimson; text-align: center;}
+        table{border: 0px solid blue; border-collapse: collapse;}
+        td{border: 0px solid blue; width: 250; height: 70; text-align: center; font-size: 30px;background-color:#cbb9b1;font-size: 30px;color: blue;text-align: left;padding: 10px;}
+        span{color: red;font-size: 16px;}
+        .weak{background-color: red;height: 30px;color: white;padding: 3px;}
+        .medium{background-color: #f7a500;height:30px;color: white;padding: 3px;}
+        .strong{background-color: blue;height:30px;color: white;padding: 3px;}
+        .verystrong{background-color: #16f700;height:30px;color: white;padding: 3px;}
+    </style>
+
+    <body>
+        <h1>JavaScript Form Validation </h1>
+<form action="AutomaticImageSlider.html" onsubmit="return check()" autocomplete="off">
+        <table align="center">
+            <tr>
+            <td> Name:<span> Alphabets only allowed!! </span></td>
+            <td><input id="name"/></td>
+            
+        </tr>
+        <tr>
+            <td> Mobile:<span> 10 digit number!!</span></td>
+            <td><input/></td>
+            
+        </tr>
+        <tr>
+            <td> Email:<span> Use correct format!!</span></td>
+            <td><input/></td>
+            
+        </tr>
+        
+        <tr>
+            <td>Password:<span> 1 small, 1 caps, number, special char </span></td>
+            <td><input oninput="checkPass()" onmouseout="mouseout()" />
+            <span id="span"></span>
+        </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Signup" /></td>
+        </tr>
+    </table>
+</form>
+    <script>
+        x=document.getElementsByTagName("input");
+
+        function check()
+        { 
+                     
+        //------------------Name validation---------------
+         alpha=/^[A-Za-z]+$/
+         if(x[0].value=="")
+          {
+              alert("Please fill name");
+              return false;
+          }
+          if(!alpha.test(x[0].value))
+          {
+            alert("Use only alphabets in name");
+            return false;
+          }
+          //------------Mobile Number Validation---------------
+          number=/^([0-9]{10})+$/
+          if(x[1].value=="")
+          {
+              alert("Please fill Mobile number");
+              return false;
+          }
+          if(!number.test(x[1].value))
+          {
+            alert("Enter 10 digit number");
+            return false;
+          }
+
+          //------------Email Validation---------------
+          email=/^([A-Za-z0-9_.])+\@([a-z])+\.([a-z])+$/
+          if(x[2].value=="")
+          {
+              alert("Please fill Email");
+              return false;
+          }
+          if(!email.test(x[2].value))
+          {
+              alert("use only correct email format");
+            return false;
+          }
+
+          //------------Password Validation---------------
+          pass=/^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,})+$/
+          if(x[3].value=="")
+          {
+              alert("Please fill password");
+              return false;
+          }
+          if(!pass.test(x[3].value))
+          {
+              alert("use 1 small, cap, numbers and special char");
+            return false;
+          }
+        }
+        function checkPass()
+        {
+            length=x[3].value.length;
+            if(length<3)
+            {
+                document.getElementById("span").className="weak";
+                document.getElementById("span").innerHTML="Your Password is weak";
+            }else if(length>=3 && length<=5)
+            {
+                document.getElementById("span").className="medium";
+                document.getElementById("span").innerHTML="Your Password is medium";
+            }else if(length>6 && length<=8)
+            {
+                document.getElementById("span").className="strong";
+                document.getElementById("span").innerHTML="Your Password is strong";
+            }else if(length>8)
+            {
+                document.getElementById("span").className="verystrong";
+                document.getElementById("span").innerHTML="Your Password is very strong";
+            }
+        }
+
+        function mouseout()
+        {
+            document.getElementById("span").classList.remove("weak","medium","strong","verystrong");
+            document.getElementById("span").innerHTML="";
+        }
+    </script>
+     </body>
+    </html>
